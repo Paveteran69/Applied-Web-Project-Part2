@@ -1,0 +1,1024 @@
+/*Akshay's Part Start*/
+/*Universal font family for all text*/
+
+footer{
+    background-color:lightblue;
+}
+* {
+  font-family: Georgia, serif;
+}
+
+/*Ensures padding and border widths are included inside total dimensions*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+}
+
+/*Adds a scrollbar*/
+html::-webkit-scrollbar {
+  width: 0.7vw;
+}
+
+/*Adds a scrollbar thumb*/
+html::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 51, 255, 0.7);
+  border-radius: 12px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 190, 0.789);
+}
+
+html::-webkit-scrollbar-track {
+  background-color: rgba(0, 119, 255, 0.859);
+  border-radius: 12px;
+}
+
+/* Top Navigation Bar */
+.top_area {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 0 2rem;
+  min-height: 6rem;
+  background-color: rgb(165, 159, 159);
+  border-bottom: 5px solid grey;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.navigation a {
+  display: inline-block;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: #000;
+  padding: 0.75rem 1.25rem;
+  border-right: 2px solid darkslategray;
+  transition: background-color 0.2s ease;
+}
+
+.navigation a:first-child {
+  border-left: 2px solid darkslategray;
+}
+
+.navigation a:hover {
+  background-color: #fff;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.searchbar input[type="text"] {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: none;
+  font-style: italic;
+  outline: none;
+}
+
+.searchbar button {
+  padding: 0.6rem 1.5rem;
+  background-color: #ddd;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.searchbar button:hover {
+  background-color: #ccc;
+}
+
+/* "The Jobs Page" Header Box */
+.heading_jb {
+  text-align: center;
+  width: 250px;
+  min-width: 250px;
+  margin: 1.5rem 0 1.5rem 2rem;
+  padding: 2em;
+  border: 3px solid blue;
+  border-radius: 12px;
+  background-color: lightcyan;
+  color: darkblue;
+}
+
+.heading_jb h1 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: darkblue;
+}
+
+/* Main Content Layout Container */
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Style all 4 child job columns */
+.wrapper .extreme_left,
+.wrapper .left,
+.wrapper .right,
+.wrapper .extreme_right {
+  flex: 1;
+  min-width: 200px;
+  height: fit-content;
+  transition: transform 0.25s ease;
+}
+
+/* Job Cards / Boxes */
+.lists_jb,
+.wrapper h2, 
+.wrapper section,
+.wrapper div.text_box,
+.wrapper p:not(:empty) {
+  border: 3px solid blue;
+  border-radius: 12px;
+  background-color: lightcyan; 
+  color: darkblue;
+  padding: 1.5em;
+  margin-bottom: 1em;
+}
+
+/* Span styling inside jobs */
+.wrapper span,
+.lists_jb span {
+  color: darkblue;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Hover Animation */
+.wrapper .extreme_left:hover,
+.wrapper .left:hover,
+.wrapper .right:hover,
+.wrapper .extreme_right:hover {
+  transform: scale(1.03);
+}
+
+/* Right-side Aside Box ("Our Company Hiring Standards") */
+.aside_jb {
+  width: 280px;
+  min-width: 260px;
+  margin: 0;
+  padding: 1em;
+  border-radius: 12px;
+  border: 3px solid blue; 
+  background-color: lightcyan; 
+  color: darkblue;
+  text-align: center;
+  float:right;
+}
+
+/* Reporting Line images */
+img[src*="Reporting Line"] {
+  padding: 1em;
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* Footer Styling */
+.footer_jb {
+  clear: both;
+  margin-top: 3em;     
+  width: 100%;
+  padding: 2em 0;
+  text-align: center;
+  border-top: 3px solid black;
+  background-color: lightblue;
+}
+
+.service_head {
+  font-size: 2em;
+}
+
+/* Responsive Breakpoint for Mobile/Tablet */
+@media screen and (max-width: 900px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .aside_jb {
+    width: 100%;
+    margin-top: 1.5em;
+  }
+}
+/*Akshay's Part End*/
+/*Danial's PART STARTTTT*/
+
+body{
+    background-color:lightcyan;
+    background-image: linear-gradient( cornflowerblue,lightsteelblue,lightcyan,
+    lightsteelblue,cornflowerblue);
+}
+
+.searchbar input[type="text"] {
+    all: revert;
+}
+
+.top_area {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 0 2rem;
+  min-height: 6rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 0 2rem;
+  min-height: 6rem;
+  background-color: rgb(165, 159, 159);
+  border-bottom: 5px solid grey;
+  width: 100%;
+  min-width: max-content;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.navigation a {
+  display: inline-block;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: #000;
+  padding: 0.75rem 1.25rem;
+  border-right: 2px solid darkslategray;
+  transition: background-color 0.2s ease;
+}
+
+.navigation a:first-child {
+  border-left: 2px solid darkslategray;
+}
+
+.navigation a:hover {
+  background-color: #fff;
+}
+
+/* Search bar styling */
+.searchbar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.searchbar input[type="text"] {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: none;
+  font-style: italic;
+  outline: none;
+}
+
+.searchbar button {
+  padding: 0.6rem 1.5rem;
+  background-color: #ddd;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.searchbar button:hover {
+  background-color: #ccc;
+}
+
+.service_head {
+  font-size: 2em;
+}
+
+/* For the header part */
+.h1forapply {
+    text-align: center; 
+    font-weight: 500;
+    color: teal; 
+    
+    /* Explicitly reset width rules inherited from h1 */
+    width: 100%;
+    min-width: auto;
+    max-width: 1100px;
+
+    /* Override border properties explicitly */
+    border: 3px solid #5179b0;
+    border-radius: 0; /* Reset border radius if you don't want rounded corners */
+    
+    background-color: #ffffff; /* Corrected to standard 6-digit hex */
+    padding: 20px; 
+    margin: 20px auto;
+    
+    animation-name: headerAnimationforApply;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes headerAnimationforApply {
+   0% { background-color: #93c2ff; }
+  33% { background-color: lightgreen; }
+  66% { background-color: lightyellow; }
+  100% { background-color: #93c2ff; }
+    
+}
+
+
+/* styling the fieldset */
+fieldset {background-color: #FFFF; 
+    border : 5px solid #64748B; 
+    padding: 20px; 
+    margin: 20px;
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+    box-shadow: 4px 4px 10px 0px black;
+    }
+
+
+    /*reset the akshay's rule border for apply page */
+    fieldset.no-border {
+    border: none ;
+    box-shadow: none ;
+    background-color: transparent ;
+    padding: 0;
+    margin: 0;
+}
+
+    
+legend {font-size: 20px; 
+    font-weight: bold; 
+    color: teal;
+    border:2px solid #64748B;
+    border-style: outset;
+    background-color: lightcyan;}
+.form-container{ 
+    display: flex ; 
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1200px;
+    margin:auto;
+    gap: 40px; 
+    
+}
+
+/* reset color change from akshay's rule */
+.form-container label,
+.form-container span,
+.form-container li,
+.form-container .input-option {
+    color: black ; 
+    font-weight: lighter;
+}
+
+
+/*Styling the left side of the form */
+.left-column{
+    width:45%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;  
+
+                      
+    
+}
+
+
+
+.gender-group .field-label {
+  
+  /* Resetting border from akshay's rule */
+  border: none ;
+  background-color: transparent ;
+  padding: 0 ;
+  color: #000;
+}
+
+/*styling the right side of the form*/
+.right-column{
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    width: 35%;
+
+}
+
+
+
+
+.right-column fieldset {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 6px;         
+      
+}
+
+
+.desired-column fieldset,
+.right-column fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* To space the options */
+}
+
+/*Wrap the radio n checkbox */
+.input-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* Prevent inputs from shifting or breaking out when we make the page smaller*/
+.input-option input[type="checkbox"],
+.input-option input[type="radio"], input[type="radio"],
+select{
+  position: static;
+  margin: 0;
+  cursor: pointer;
+}
+
+
+
+textarea{ width: 100%;
+max-width: 100%;}
+
+/* To make the submit button stay at the bottom right*/
+.submit-button-container{
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin: 0;
+    
+   
+}
+
+.submit-button{
+    transition: transform 0.3s ease-in-out;
+    border-radius: 6px;
+}
+/* WHen hovering the button changes colour and bigger*/
+.submit-button:hover{
+    background-color: lightblue;
+    transform: scale(1.2);
+}
+
+.file-button{
+    display:flex;
+    cursor: pointer;
+}
+
+
+.desired-column {
+    display: flex;
+    flex-wrap: wrap;        
+    align-items: center;
+}
+
+.desired-column input{
+    position:relative;
+    bottom:24px;
+    right:60px;
+}
+
+.desired-column fieldset{
+    display: flex;
+    flex: 1;
+    flex-direction: column; 
+}
+
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 90%;
+    padding: 6px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0066cc; 
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="radio"],
+select{
+    margin: 10px
+}
+
+input[type="submit"] {
+    font-size: 18px;       
+    padding: 5px 10px;   
+    background-color: #fff; 
+    cursor: pointer;
+    
+}
+
+footer{
+    border-top: 3px solid black;
+    clear: both;
+    text-align: center;
+}
+
+input:hover,
+select:hover,
+textarea:hover{
+    background-color: lightgray;
+}
+
+input:user-invalid,
+select:user-invalid{
+    color: red;
+    border-color: red;
+    
+}
+
+/* DANIAL END */
+
+/* starting off Aiman css */
+.title_ab{
+    font-size: 25px;
+    text-align: center;
+}
+
+/*This is just for the who are we part*/
+.who_ab{
+    position:relative;
+    border: 1px solid darkblue;
+    background-color:lightsteelblue;
+    width:90%;
+    max-width: 200px;
+    text-align:center;
+    margin: 0px auto;
+    font-size:1.25em;
+    white-space:nowrap;
+    color:rgb(2, 15, 98);
+}
+
+/* questionmark animation  */
+.who_ab h2::after{
+    position:absolute;
+    content:"?";
+    font-size:75px;
+    transform:scale(0);
+    transition:ease-out;
+    transition-duration: 150ms;
+    bottom:10px
+}
+
+.who_ab h2:hover::after{
+    transform:scale(1);
+    position:absolute;
+    transition:ease-in;
+    transition-duration: 150ms;
+    bottom:10px;
+}
+
+/* This part is where we go into the first content part*/
+.text1_ab{
+    display:flex;
+    font-size:2em;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    border: 2px solid ;
+    width:90%;
+    max-width:300px;
+    min-width:250px;
+    margin:auto;
+    margin-left:10%;
+    background-color:beige;
+    border-radius:50px;
+    padding:1em;
+}
+
+
+.us_ab{
+    display:flex;
+    margin:2em;
+    padding:2em;
+}
+
+/*photo box*/
+.group_photo_ab{
+    border: 2px double black;
+    bottom:16em;
+    left:65em;
+    min-width: 20em;
+    max-width: 40em;
+    max-height: 50em;
+}
+/*actual photo*/
+.group_photo_ab img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+/* section for schedule content*/
+.text2_ab{
+    position:relative;
+    display:flex;
+    width:90%;
+    max-width: 500px;
+    margin:2em;
+    align-items:center;
+    text-align:center;
+    left:12%;
+}
+
+.text2_ab p{
+    padding:1em;
+    font-size:2em;
+    border:2px solid ;
+    background-color:beige;
+    border-radius:10px;
+    min-height:5em;
+    max-height:100em; 
+    align-items:center;
+    text-align:center;
+}
+
+.text2_ab li{
+    display:flex;
+    margin:auto;
+    padding:1em;
+    border: 2px solid indianred;
+    background-color:coral;
+    border-radius:20%;
+    min-height:5em ;
+    max-height:10em;
+    min-width:100px;
+    max-width:90%;
+    text-align:center;
+    align-items:center;
+}
+
+.middle_section_ab{
+    margin:2em;
+    padding:2em;
+}
+
+/*white block starting new section*/
+.sub_section_block_ab{
+    border:2px double azure;
+    width:100%;
+    background-color:azure;
+    height:auto;
+    padding: 20px 0;
+}
+
+.sub_topic_ab{
+    text-align: center;
+    font-size:1.5em;
+}
+
+.people_ab{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+/*This is for each individual orange box*/
+.sub_section_block_ab dl{
+    border:1px solid;
+    font-size:1.5em;
+    min-width:20em;
+    max-width:25%;
+    min-height:600px;
+    background-color:rgb(249, 155, 83);
+    margin:0.5em;
+    padding:0.5em;
+    position:relative;
+    overflow:hidden;
+    display:block;
+}
+
+/* starting from here its all content inside the box including animation*/
+.ryan_ab{   
+    text-align: center;
+    font-size:2em;
+}
+
+.ryan_text_ab{
+    text-align:left;
+    margin:5%;
+    transform:scalex(1);
+    transition:ease-out;
+    transform-origin: left;
+    transition-duration:500ms;
+    opacity:0;
+    color:darkslateblue;
+
+}
+
+.ryan_text_ab:hover{
+    transform:scalex(1);
+    transition:ease-in;
+    opacity:1;
+    transition-duration:500ms ;
+}
+
+
+.ryan_text_ab::after{
+    position:absolute;
+    content:url(images/Ryan.jpeg);
+    left:10%;
+
+}
+
+.akshay_ab{   
+    text-align: center;
+    font-size:2em;
+}
+
+.akshay_text_ab{
+    text-align:left;
+    margin:5%;
+    transform:scalex(1);
+    transition:ease-out;
+    transform-origin: left;
+    transition-duration:500ms;
+    opacity:0;
+    color:darkslateblue;
+   
+  
+}
+
+.akshay_text_ab:hover{
+    transform:scalex(1);
+    transition:ease-in;
+    opacity:1;
+    transition-duration:500ms ;
+}
+
+.akshay_text_ab::after{
+    position:absolute;
+    content:url(images/akshay.jpeg);
+    right:30%;
+    min-height: 10%;
+}
+
+.danial_ab{   
+    text-align: center;
+    font-size:2em;
+}
+
+.danial_text_ab{
+    text-align:left;
+    margin:5%;
+    transform:scalex(1);
+    transition:ease-out;
+    transform-origin: left;
+    transition-duration:500ms;
+    opacity:0;
+    color:darkslateblue;
+   
+  
+}
+
+.danial_text_ab:hover{
+    transform:scalex(1);
+    transition:ease-in;
+    opacity:1;
+    transition-duration:500ms ;
+}
+
+.danial_text_ab::after{
+    position:absolute;
+    content:url(images/Danial.jpeg);
+    align-items:center;
+    min-height: 10%;
+    left:10%;
+}
+
+.nik_ab{   
+    text-align: center;
+    font-size:2em;
+}
+
+.nik_text_ab{
+    text-align:left;
+    margin:5%;
+    transform:scalex(1);
+    transition:ease-out;
+    transform-origin: left;
+    transition-duration:500ms;
+    opacity:0;
+    color:darkslateblue;
+   
+}
+
+.nik_text_ab:hover{
+    transform:scalex(1);
+    transition:ease-in;
+    opacity:1;
+    transition-duration:500ms ;
+}
+
+.nik_text_ab::after{
+    position:absolute;
+    content:url(images/NikAiman.jpeg);
+    right:30%;
+    height:100px;
+    width: auto;
+    left:10%;
+}
+
+.pave_ab{   
+    text-align: center;
+    font-size:2em;
+}
+
+.pave_text_ab{
+    text-align:left;
+    margin:5%;
+    transform:scalex(1);
+    transition:ease-out;
+    transform-origin: left;
+    transition-duration:500ms;
+    opacity:0;
+    color:darkslateblue;
+   
+  
+}
+
+.pave_text_ab:hover{
+    transform:scalex(1);
+    transition:ease-in;
+    opacity:1;
+    transition-duration:500ms ;
+}
+
+.pave_text_ab::after{
+    position:absolute;
+    content:url(images/Pave.jpeg);
+    right:30%;
+    min-height: 9%;
+    left:10%;
+}
+
+@media screen and (min-width:1200px){
+
+    .wrapper{
+        display:flex;
+
+        
+    }
+}
+
+aside{ 
+    align-items: center;
+    text-align: center;
+
+}
+
+.fix_1{
+  border:none;
+  background-color:transparent;
+  color: black;
+}
+
+
+/* end of Aimans part*/
+
+
+/*Paveteran's Part Start*/
+footer{
+    border-top: 3px solid black;
+    clear: both;
+    text-align: center;
+}
+
+*{
+    font-family: georgia, serif; 
+    color: black;
+}
+
+body{
+    background-color:lightcyan;
+    background-image: linear-gradient( cornflowerblue,lightsteelblue,lightcyan,
+    lightsteelblue,cornflowerblue);
+}
+
+.h1mine{
+    color: #4CA9FC;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+    transition: transform 0.8s ease;
+}
+
+.h1mine:hover{
+    transform: scale(1.3);
+}
+
+.description strong{
+    color: darkblue;
+}
+
+.description{
+    width: 1100px;
+    margin: 0 auto 30px;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.6;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin: 30px 0;
+}
+
+.image img{
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+}
+
+#img2{
+    margin-top: 20px;
+}
+
+#img1, #img2, #img3{
+    transition: transform 0.8s ease;
+}
+
+#img1:hover{
+    transform: scale(1.2);
+}
+
+#img2:hover{
+    transform: scale(1.2);
+}
+
+#img3:hover{
+    transform: scale(1.2);
+}
+
+table{
+    width: 95%;
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: #0066a1;
+    color: white;
+    padding: 10px;
+    border: 2px solid #333;
+    text-align: center;
+}
+
+td{
+    padding: 10px;
+    border: 2px solid #333;
+    text-align: center;
+    color: darkblue;
+}
+
+tr:nth-child(even){
+    background-color: #f2f8fc;
+}
+
+tr:nth-child(odd){
+    background-color: lightsteelblue;
+}
+/*End of paveteran's part*/
