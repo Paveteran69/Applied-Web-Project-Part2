@@ -33,9 +33,10 @@
    </a>
 
   <nav class="navigation">
-    <a href="index.html">Home</a>
-    <a href="jobs.html">Jobs</a>
-    <a href="about.html">About</a>
+    <a href="index.php">Home</a>
+    <a href="jobs.php">Jobs</a>
+    <a href="about.php">About</a>
+    <a href="login.php">Login</a>
   </nav>
 
   <div class="searchbar">
