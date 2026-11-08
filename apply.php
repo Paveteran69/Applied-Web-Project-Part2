@@ -56,8 +56,13 @@
           <div class="left-column">   <!-- Set the class for the left side of the form (personal info and desired role)-->
           <fieldset class = "form-section"> <!-- set class for the form fieldsets-->
            <legend> Personal Information </legend>
-            <label for ="Ref_ID" > Job Reference Number: </label>
-            <input type = "text" name = "Ref_ID" id = "Ref_ID" pattern = "[a-zA-Z0-9]{5}"  required>
+            <label for = "Ref_ID"> Job Reference ID: </label>
+            <select name = "Ref_ID" id = "Ref_ID" required>
+                <option value = ""> Please Select </option>
+                <option value = "Front-End Developer"> JN023</option>
+                <option value = "Back-End Developer"> JN024</option>
+                <option value = "Vulnerability Analyst"> JN025</option>
+                <option value = "Helpdesk Technician"> JN026</option>
 
             <!-- USE CSS TO PUT MARGIN OR SPACE MAYBE??-->
 
