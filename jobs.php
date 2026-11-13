@@ -21,12 +21,12 @@
     <a href="index.php">Home</a>
     <a href="jobs.php">Jobs</a>
     <a href="about.php">About</a>
-    <a href="login.php">Login</a>
+    <a href="manage.php">Manage</a>
   </nav>
 
   <div class="searchbar">
     <input type="text" placeholder="Search...">
-    <button type="button"><img src="images/search.png" alt="Search Logo" width="14rem" height="14rem"></button>
+    <button type="submit"><i class="fa fa-search"></i></button>
   </div>
 
 </header>

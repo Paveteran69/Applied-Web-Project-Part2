@@ -20,7 +20,7 @@
                 <a href="index.php">Home</a>
                 <a href="jobs.php">Jobs</a>
                 <a href="about.php">About</a>
-                <a href="login.php">Login</a>
+                <a href="manage.php">Manage</a>
             </nav>
 
             <div class="searchbar">
