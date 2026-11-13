@@ -172,7 +172,7 @@ if ($skills_provided == false && $other_provided == false) {
 }
 
 if (strlen($other) > 1000) {
-    $errors[] = "Describe your other skills with less than a 1000 words.";
+    $errors[] = "Describe your other skills with less than a 1000 characters.";
 }
 
 ?>
