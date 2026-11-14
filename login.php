@@ -9,6 +9,12 @@
 
     <h1>HR Manager Login</h1>
 
+    <?php
+if (isset($_GET['error']) && $_GET['error'] == "invalid") {
+    echo "<p style='color:red;'>Incorrect username or password. Please try again.</p>";
+}
+?>
+
     <form action="process_login.php" method="post">
 
         <label for="username">Username:</label>
