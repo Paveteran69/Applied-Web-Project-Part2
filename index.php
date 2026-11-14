@@ -4,32 +4,17 @@
         <meta charset="utf-8">
         <meta name="description" content="This is the index page of the project">
         <meta name="keywords" content="HTML5, CSS, Form, tags">
-        <meta name="author" content="Paveteran Elangovan">
+        <meta name="author" content="Paveteran">
         <title>Home</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="Styles.css">
     </head>
     <body>
-        <header class="top_area">
-            <a href="#" class="logo">
-                <img src="images/FINTECH_LOGO.jpeg" alt="Fintech Logo" height="65rem" width="250rem">
-            </a>
 
-            <nav class="navigation">
-                <a href="index.php">Home</a>
-                <a href="jobs.php">Jobs</a>
-                <a href="about.php">About</a>
-                <a href="manage.php">Manage</a>
-                <a href="login.php">Login Account</a>
-            </nav>
+    <?php
+    include 'header.inc';
+    ?>
 
-            <div class="searchbar">
-                <input type="text" placeholder="Search...">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </div>          
-        </header>
-        
         <h1 class="h1mine">Our Services At Your Convenience</h1>
 
         <div class="description">
@@ -52,34 +37,29 @@
                 <th rowspan="2">Service</th>
                 <th colspan="3">Details</th>
             </tr>
-
             <tr>
                 <th>Description</th>
                 <th>Benefits</th>
                 <th>Features</th>
             </tr>
-
             <tr>
                 <td>Online Banking Platform</td>
                 <td>Cost-effective alternative option</td>
                 <td>Safe and cost-effective</td>
                 <td>Secure transactions</td>
             </tr>
-
             <tr>
                 <td>Digital Payment System</td>
                 <td>Seamless payment solution</td>
                 <td>Convenient and secure transactions</td>
                 <td>Multiple payment options</td>
             </tr>
-
             <tr>
                 <td>Mobile Financial Applications</td>
                 <td>Highly secure and user friendly service</td>
                 <td>User friendly and feature-rich</td>
                 <td>High security services</td>
             </tr>
-
             <tr>
                 <td>Financial Management Tools</td>
                 <td>Handful of useful of budgeting tools</td>
@@ -89,12 +69,7 @@
         </table>
         <br />
 
-        <footer>
-            <p style="font-weight: bold; color:darkblue">My Sources:<br>Gemini<br><br>
-               <a href="https://ryanstothard.atlassian.net/jira/software/projects/WEB/boards/2/backlog?atlOrigin=eyJpIjoiOWI3MjFkNGI1NGJjNGFiOTkwYTQwZDZjMWIyMzIzMzUiLCJwIjoiaiJ9" target="blank"><img src="images/jira.webp" alt="Jira" title="Jira_" width="35" height="35" /></a> 
-               <a href="https://github.com/Paveteran69/Applied-Web-Project.git" target="blank"><img src="images/github.webp" alt="GitHub" title="GitHub_" width="35" height="35" /><br><br></a> 
-               Contact us: <a href="mailto:info@fintech.com">info@fintech.com</a><br><br>&copy;2026 FinTech. All rights reserved.
-            </p>
-        </footer>
+    <?php include 'footer.inc'; ?>
+
     </body>
 </html>
