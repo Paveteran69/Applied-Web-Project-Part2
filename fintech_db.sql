@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2026 at 01:22 PM
+-- Generation Time: Nov 13, 2026 at 04:17 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `fintech_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contributions`
+--
+
+CREATE TABLE `contributions` (
+  `Student_ID` int(9) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `Contributions_Field` varchar(100) NOT NULL,
+  `Description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contributions`
+--
+
+INSERT INTO `contributions` (`Student_ID`, `Name`, `Contributions_Field`, `Description`) VALUES
+(106218184, 'RYAN STOTHARD', 'HTML, CSS, PHP', '- FOR NOW\r\n'),
+(106728654, 'Akshay Kumar', 'HTML, CSS, SQL', 'Created the Jobs page, help create the navigation bar,decorated Jobs page using CSS and help create/manage the database'),
+(106729026, 'NIK MOHAMED AIMAN', 'HTML, CSS, SQL , PHP', 'Helped with some parts of the HTML code in About.HTML , decorated the page using CSS and help create and manage the database'),
+(106729136, 'MUHAMAD DANIAL', 'HTML, CSS, PHP', 'Used HTML to create and CSS to decorate the apply page, and created manage.php'),
+(106947909, 'PAVETERAN ELANGOVAN', 'HTML, CSS, PHP,', '- FOR NOW\r\n');
 
 -- --------------------------------------------------------
 
@@ -47,6 +71,52 @@ INSERT INTO `jobs` (`job_name`, `reference_number`, `job_description`, `starting
 ('Back-End Developer', 'JN024', 'These developers are used to create and maintain the server-side code that helps the website and server connect with each other.', 'AUD 8000', '', 'Ensuring that the company server and website are able to communicate with each other.\n Maintaning the server-side code.\n Cooperating with the front-end developers.', '•Must be able to code in PHP, C#, and/or MySQL.\n•Must be able to effectively and efficiently communicate with your peers.\n•Must have a CGPA of 3.4 and above.', '•Knows how to speak other languages than english.\n•Has been part of a club that hosts activities that utilise back-end development skills.\n•Has interned in a company that has advance server-side coding.'),
 ('Vulnerability Analyst', 'JN025', 'These analysts are used to analyse security systems to ensure that they secure and are difficult to breach.', 'AUD 9500', '', '1.Ensuring that the company security is secure from threats.\n2.Conducting monthly security audits at the company headquarters.\n3.Writing reports to Cybersecurity and Risk Management about current and future security needs.', '•Must be able to use FortiCNAPP, Nessus and/or InsightVM.\n•Must be able to effectively and efficiently communicate with your peers.\n•Must have a CGPA of 3.4 and above.', '•Knows how to speak other languages than english.\n•Has been part of a club that hosts activities that utilise vulnerability analysis.\n•Has interned in a company that has used vulnerability analysis tools.'),
 ('Help Desk Technician', 'JN026', 'These technicians are used to give important first-line IT support, troubleshooting, and managing support tickets.', 'AUD 6500', '', '1.Giving users technical support.\n2.Trouble shooting problems.\n3.Managing support tickets.', '•Must be able to use TeamViewer and Jira.\n•Must be able to effectively and efficiently communicate with the users.\n•Must have a CGPA of 3.4 and above.', '•Knows how to speak other languages than english.\n•Has CompTIA A+ certification.\n•Has interned in a company that has given basic customer service experience.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `password`) VALUES
+(1, 'admin', '$2y$10$.iTBhUDx71O1.TJ3keJ6x.2kbPw3pTDpc4rwuYRmuiefPKtAGxFJC');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `contributions`
+--
+ALTER TABLE `contributions`
+  ADD PRIMARY KEY (`Student_ID`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

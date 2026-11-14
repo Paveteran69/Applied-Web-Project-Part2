@@ -9,7 +9,7 @@
         $host = "localhost";
         $user = "root";
         $password = "";
-        $database = "fintech_db"; // Replace with your actual database name
+        $database = "fintech_db";
     ?>
 </body>
 </html>

@@ -21,6 +21,7 @@
                 <a href="jobs.php">Jobs</a>
                 <a href="about.php">About</a>
                 <a href="manage.php">Manage</a>
+                <a href="login.php">Login Account</a>
             </nav>
 
             <div class="searchbar">
