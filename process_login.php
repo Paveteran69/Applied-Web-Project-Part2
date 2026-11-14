@@ -44,22 +44,22 @@ mysqli_stmt_execute($stmt);
 // Get query result
 $result = mysqli_stmt_get_result($stmt);
 
-// Check whether username exists
+// Check if username exists
 if (mysqli_num_rows($result) == 1) {
 
     $user = mysqli_fetch_assoc($result);
 
-    // Verify password
+    // Verify the password
     if (password_verify($password, $user['password'])) {
 
         // Regenerate session ID
         session_regenerate_id(true);
 
-        // Store manager information in session
+        // Store admin information in session
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['username'] = $user['username'];
 
-        // Redirect to manage.php
+        // Bring to manage.php
         header("Location: manage.php");
         exit();
 
