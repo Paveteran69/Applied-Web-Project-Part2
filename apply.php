@@ -23,13 +23,6 @@
 
   <?php
   include 'header.inc';
-
-  require_once "settings.php";
-    $conn = mysqli_connect($host, $user, $password, $database);
-
-    if (!$conn) {
-       die("Connection failed: " . mysqli_connect_error());
-   }
   ?>
 
 <h1 class="h1forapply">JOB APPLICATION FORM</h1>
