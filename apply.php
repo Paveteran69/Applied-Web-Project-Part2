@@ -21,23 +21,9 @@
 
 <body>
 
-<header class="top_area">
-  <a href="#" class="logo">
-    <img src="images/FINTECH_LOGO.jpeg" alt="Fintech Logo" height="65rem" width="250rem">
-  </a>
-
-  <nav class="navigation">
-    <a href="index.php">Home</a>
-    <a href="jobs.php">Jobs</a>
-    <a href="about.php">About</a>
-    <a href="manage.php">Manage</a>
-  </nav>
-
-  <div class="searchbar">
-    <input type="text" placeholder="Search...">
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </div>
-</header>
+  <?php
+  include 'header.inc';
+  ?>
 
 <h1 class="h1forapply">JOB APPLICATION FORM</h1>
 
@@ -203,19 +189,7 @@
   </div>
 </form>
 
-<footer>
-  <p style="font-weight: bold; color: darkblue">
-    My Sources:<br>MADCAP<br>Indeed<br>OrgChart<br>Fortinet<br>Unihackers<br>Interview Kickstart<br>Gemini<br>
-    <a href="https://ryanstothard.atlassian.net/jira/software/projects/WEB/boards/2/backlog" target="_blank">
-      <img src="images/jira.webp" alt="Jira" title="Jira" width="35" height="35">
-    </a>
-    <a href="https://github.com/Paveteran69/Applied-Web-Project.git" target="_blank">
-      <img src="images/github.webp" alt="GitHub" title="GitHub" width="35" height="35">
-    </a><br>
-    Contact us: <a href="mailto:info@fintech.com">info@fintech.com</a><br>
-    &copy;2026 FinTech. All rights reserved.
-  </p>
-</footer>
+  <?php include 'footer.inc'; ?>
 
 </body>
 </html>

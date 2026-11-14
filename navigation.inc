@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Footer</title>
-</head>
-<body>
-<footer>
-  <p>&copy; 2026 Lab 08</p>
-</footer>
-</body>
-</html>
+<nav class="navigation">
+    <a href="index.php">Home</a>
+    <a href="jobs.php">Jobs</a>
+    <a href="about.php">About</a>
+    <a href="manage.php">Manage</a>
+</nav>

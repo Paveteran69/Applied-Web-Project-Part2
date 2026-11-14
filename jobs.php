@@ -12,24 +12,10 @@
 
 <body class="jobs-page">
 
-  <header class="top_area">
-   <a href="#" class="logo">
-     <img src="images/FINTECH_LOGO.jpeg" alt="Fintech Logo" height="65rem" width="250rem">
-   </a>
+  <?php
+  include 'header.inc';
+  ?>
 
-  <nav class="navigation">
-    <a href="index.php">Home</a>
-    <a href="jobs.php">Jobs</a>
-    <a href="about.php">About</a>
-    <a href="manage.php">Manage</a>
-  </nav>
-
-  <div class="searchbar">
-    <input type="text" placeholder="Search...">
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </div>
-
-</header>
     <div class="heading_jb">
      <header>
        <h1>The Jobs Page</h1>
@@ -239,14 +225,8 @@
       </aside>
      </div>
     </article>
-  </body>
 
- <div class="footer_jb">
- <footer>
-            <p style="font-weight: bold; color:darkblue">My Sources:<br>MADCAP<br>Indeed<br>OrgChart<br>Fortinet<br>Unihackers<br>Interview Kickstart<br>Gemini<br>
-               <a href="https://ryanstothard.atlassian.net/jira/software/projects/WEB/boards/2/backlog?atlOrigin=eyJpIjoiOWI3MjFkNGI1NGJjNGFiOTkwYTQwZDZjMWIyMzIzMzUiLCJwIjoiaiJ9" target="blank"><img src="images/jira.webp" alt="Jira" title="Jira_" width="35" height="35" />
-               </a> <a href="https://github.com/Paveteran69/Applied-Web-Project.git" target="blank"><img src="images/github.webp" alt="GitHub" title="GitHub_" width="35" height="35" /><br>
-               </a> Contact us: <a href="mailto:info@fintech.com">info@fintech.com</a><br>&copy;2026 FinTech. All rights reserved.</p>
-  </footer>
-  </div>
+  <?php include 'footer.inc'; ?>
+
+</body>
 </html>

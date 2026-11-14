@@ -56,26 +56,13 @@
     <body class>
         <div class="wrapper_ab">
             <section class="background">
-                        <!--Navigation Bar start-->
-                <header class="top_area">
-                    <a href="#" class="logo">
-                        <img src="images/FINTECH_LOGO.jpeg" alt="Fintech Logo" height="65rem" width="250rem">
-                    </a>
 
-                    <nav class="navigation">
-                        <a href="index.php">Home</a>
-                        <a href="jobs.php">Jobs</a>
-                        <a href="about.php">About</a>
-                        <a href="manage.php">Manage</a>
-                    </nav>
-
-                    <div class="searchbar">
-                        <input type="text" placeholder="Search...">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </div>
-
-                </header>
+                    <!--Navigation Bar start-->
+                    <?php
+                    include 'header.inc';
+                    ?>
                     <!--End-->
+
                 <header>
                     <div class="title_ab"><h1>About Us</h1></div>
                 </header>
@@ -201,18 +188,8 @@
                 <h2>Acknowledgement of Country</h2>
                 <p>We respectfully acknowledge the Wurundjeri People of the Kulin Nation, who are the Traditional Owners of the land on which Kelantan United's offices and operations are located in Melbourne's east and outer-east, and pay our respect to their Elders past, present and emerging. We are honoured to recognise our connection to Wurundjeri Country, history, culture and spirituality through these locations, and strive to ensure that we operate in a manner that respects and honours the Elders and Ancestors of these lands. We also respectfully acknowledge Swinburne's Aboriginal and Torres Strait Islander staff, students, alumni, partners and visitors. We also acknowledge and respect the Traditional Owners of lands across Australia, their Elders, Ancestors, cultures and heritage, and recognise the continuing sovereignties of all Aboriginal and Torres Strait Islander Nations.</p>
             </aside>
-    </body>
 
-    <footer>
-                <div class="sources_ab">   
-                    <h2>sources</h2>
-                    <p>W3schools ,Youtube:kevil powel, other youtube channels,  chatgpt, gemini
-                </div>
-                <p>
-                    <a href="https://ryanstothard.atlassian.net/jira/software/projects/WEB/boards/2/backlog?atlOrigin=eyJpIjoiOWI3MjFkNGI1NGJjNGFiOTkwYTQwZDZjMWIyMzIzMzUiLCJwIjoiaiJ9" target="blank"><img src="images/jira.webp" alt="Jira" title="Jira_" width="35" height="35" /></a>
-                    <a href="https://github.com/Paveteran69/Applied-Web-Project.git" target="blank"><img src="images/github.webp" alt="GitHub" title="GitHub_" width="35" height="35" /></a>
-                </p>
-                <p>Contact us: <a href="mailto:info@fintech.com">info@fintech.com</a></p>
-                <p>&copy;2026 FinTech. All rights reserved.</p>
-            </footer>
+        <?php include 'footer.inc'; ?>
+        
+    </body>
 </html>
