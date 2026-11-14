@@ -188,7 +188,7 @@ $allowed_mimes = [
 
 $max_file_size = 5 * 1024 * 1024;   // 5 MB
 
-$pending_upload_tmp = null;         // temp path from PHP (already on disk)
+$pending_upload_tmp = null;         // temp path from PHP 
 $pending_upload_ext = null;         // validated lowercase extension
 
 if (isset($_FILES["uploaded_file"]) &&
@@ -247,7 +247,117 @@ if (count($errors) > 0) {
     exit();
 }
 
+//6. mysql table for connection, creation, insert, whatever etc 
+mysqli_report(MYSQLI_REPORT_OFF);
+$conn = @mysqli_connect($host, $user, $pwd, $dbname);
+if ($conn == false) {
+    page_start("Database Error"); //check the database at myphpadmin, either delete the current table or make a new one with the same name fintech_db
+    echo "<p>Sorry, we could not connect to the database. Please try again later.</p>";
+    page_end();
+    exit();
+}
+mysqli_set_charset($conn, "utf8mb4");
 
+$create_sql = "CREATE TABLE IF NOT EXISTS eoi (
+    EOInumber      INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Ref_ID         VARCHAR(5)   NOT NULL,
+    First_Name     VARCHAR(20)  NOT NULL,
+    Last_Name      VARCHAR(20)  NOT NULL,
+    Date_Of_Birth  DATE         NOT NULL,
+    Gender         VARCHAR(10)  NOT NULL,
+    Street_Address VARCHAR(100) NOT NULL,
+    Suburb         VARCHAR(100) NOT NULL,
+    State          VARCHAR(3)   NOT NULL,
+    Postcode       CHAR(4)      NOT NULL,
+    Email          VARCHAR(255) NOT NULL,
+    Phone_Number   VARCHAR(12)  NOT NULL,
+    Desired_Role   VARCHAR(50)  NOT NULL,
+    Skills         VARCHAR(255) NOT NULL DEFAULT '',
+    Other_Skills   TEXT,
+    Uploaded_File  VARCHAR(255) DEFAULT NULL,
+    Status         ENUM('New','Current','Final') NOT NULL DEFAULT 'New',
+    Submitted_At   TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
+if (mysqli_query($conn, $create_sql) == false) {
+    page_start("Database Error");
+    echo "<p>Could not prepare the database table.</p>";
+    page_end();
+    mysqli_close($conn);
+    exit();
+}
+
+//move file uploaded (if any)
+$uploaded_file = null;
+$uploaded_abspath = null;
+
+if ($pending_upload_tmp !== null) {
+    $upload_dir = __DIR__ . "/uploads/";
+    if (is_dir($upload_dir) == false) {
+        mkdir($upload_dir, 0755, true);
+    }
+
+    // dont use user's file name to keep uploads, make new file name for user uploads for securityt
+    $safe_name = uniqid("eoi_", true) . "." . $pending_upload_ext;
+    $uploaded_abspath = $upload_dir . $safe_name;
+
+    if (move_uploaded_file($pending_upload_tmp, $uploaded_abspath) == false) {
+        page_start("Upload Error");
+        echo "<p>Could not save the uploaded file. Please try again.</p>";
+        echo "<p><a href='apply.php'>&laquo; Back to application form</a></p>";
+        page_end();
+        mysqli_close($conn);
+        exit();
+    }
+    $uploaded_file = $safe_name;
+}
+
+//Prepare INSERT (15 placeholders)
+$stmt = mysqli_prepare($conn,
+    "INSERT INTO eoi (Ref_ID, First_Name, Last_Name, Date_Of_Birth, Gender,
+        Street_Address, Suburb, State, Postcode, Email, Phone_Number,
+        Desired_Role, Skills, Other_Skills, Uploaded_File)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+if ($stmt == false) {
+    // delete user uploads when mysqli_prepare fails to reference user upload to database row
+    if ($uploaded_abspath !== null && file_exists($uploaded_abspath)) {
+        @unlink($uploaded_abspath);
+    }
+    page_start("Database Error");
+    echo "<p>Sorry, your application could not be saved. Please try again later.</p>";
+    page_end();
+    mysqli_close($conn);
+    exit();
+}
+
+mysqli_stmt_bind_param($stmt, "sssssssssssssss",
+    $ref_id, $fname, $lname, $dob, $gender, $street, $suburb, $state,
+    $postcode, $email, $phone, $role, $skills_str, $other, $uploaded_file);
+
+if (mysqli_stmt_execute($stmt) == true) {
+    $eoi_number = mysqli_insert_id($conn);
+
+    page_start("Application Submitted");
+    echo "<p>Thank you, <strong>" . h($fname) . "</strong>. Your Submittion has been received.</p>";
+    echo "<p>Your EOI number is: <strong>" . h($eoi_number) . "</strong></p>";
+    if ($uploaded_file !== null) {
+        echo "<p>Your uploaded file has been saved as <code>" . h($uploaded_file) . "</code>.</p>";
+    }
+    echo "<p>Please do keep EOI number for reference.</p>";
+    echo "<p><a href='index.php'>Return to Home</a></p>";
+    page_end();
+} else {
+    // statement valid but failed to INSERT row due to constrait violation or Database disk space full etc so delete user uploadd
+    if ($uploaded_abspath !== null && file_exists($uploaded_abspath)) {
+        @unlink($uploaded_abspath);
+    }
+    page_start("Database Error");
+    echo "<p>Something went wrong, the application isn't properly submitted. Try again next time.</p>";
+    page_end();
+}
+
+mysqli_stmt_close($stmt);
+mysqli_close($conn);
 
 ?>
