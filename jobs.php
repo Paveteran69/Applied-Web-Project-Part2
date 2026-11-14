@@ -201,7 +201,7 @@
          <span>Our company will be hiring employees who not only excel at their studies but also excel at critical thinking, creative thinking, and soft skils.</span>
 
           <section>
-          <a href="apply.html">
+          <a href="apply.php">
              <button style="font-family: Georgia; 
                             font-weight: bold; 
                             font-size: 20px; 
