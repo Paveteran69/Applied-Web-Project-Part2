@@ -175,4 +175,79 @@ if (strlen($other) > 1000) {
     $errors[] = "Describe your other skills with less than a 1000 characters.";
 }
 
+// upload validation, the upload file isnt moved at all, when completed validated here, it moves on
+
+$allowed_extensions = ["pdf", "doc", "docx", "jpg", "jpeg", "png"];
+$allowed_mimes = [
+    "application/pdf",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "image/jpeg",
+    "image/png"
+];
+
+$max_file_size = 5 * 1024 * 1024;   // 5 MB
+
+$pending_upload_tmp = null;         // temp path from PHP (already on disk)
+$pending_upload_ext = null;         // validated lowercase extension
+
+if (isset($_FILES["uploaded_file"]) &&
+    $_FILES["uploaded_file"]["error"] != UPLOAD_ERR_NO_FILE) {
+
+    $file = $_FILES["uploaded_file"];
+
+    if ($file["error"] == UPLOAD_ERR_OK) {
+
+        $original_name = basename($file["name"]);
+        $ext = strtolower(pathinfo($original_name, PATHINFO_EXTENSION));
+
+        if (in_array($ext, $allowed_extensions, true) == false) {
+            $errors[] = "File type ." . h($ext) . " is not allowed. "
+                      . "Allowed: " . implode(", ", $allowed_extensions) . ".";
+        } elseif ($file["size"] > $max_file_size) {
+            $errors[] = "File is too large. Maximum size is 5 MB.";
+        } else {
+            // find out real MIME/media type from file content causeee extension can be spoofed
+            $finfo = finfo_open(FILEINFO_MIME_TYPE);
+            $mime  = finfo_file($finfo, $file["tmp_name"]);
+            
+
+            if (in_array($mime, $allowed_mimes, true) == false) {
+                $errors[] = "File content does not match an allowed type.";
+            } else {
+                $pending_upload_tmp = $file["tmp_name"];
+                $pending_upload_ext = $ext;
+            }
+        }
+    } elseif ($file["error"] == UPLOAD_ERR_INI_SIZE ||
+              $file["error"] == UPLOAD_ERR_FORM_SIZE) {
+        $errors[] = "File is too large.";
+    } else {
+        $errors[] = "File upload failed (error code " . (int)$file["error"] . ").";
+    }
+}
+
+//5. show the user the errors when form isnt right
+function page_start($title) {
+    echo "<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'>
+          <title>$title</title><link href='Styles.css' rel='stylesheet'></head><body>
+          <h1 class='h1forapply'>$title</h1>";
+}
+
+function page_end() { echo "</body></html>"; }
+
+if (count($errors) > 0) {
+    page_start("Application Error");
+    echo "<p>Please fix the following and try again:</p><ul>";
+    foreach ($errors as $e) {
+        echo "<li>" . h($e) . "</li>";
+    }
+    echo "</ul><p><a href='apply.php'>&laquo; Back to application form</a></p>";
+    page_end();
+    exit();
+}
+
+
+
+
 ?>
