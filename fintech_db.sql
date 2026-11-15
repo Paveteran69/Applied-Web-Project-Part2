@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2026 at 03:25 AM
+-- Generation Time: Nov 15, 2026 at 12:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -31,19 +31,20 @@ CREATE TABLE `about` (
   `Student_ID` int(9) NOT NULL,
   `Name` varchar(50) NOT NULL,
   `Contributions_Field` varchar(100) NOT NULL,
-  `Quote` tinytext DEFAULT NULL
+  `Quote` tinytext DEFAULT NULL,
+  `photo_url` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `about`
 --
 
-INSERT INTO `about` (`Student_ID`, `Name`, `Contributions_Field`, `Quote`) VALUES
-(106218184, 'RYAN STOTHARD', 'about.html, about.css, PHP validate records', '\"I give em an inch, and they take a mile!\"'),
-(106728654, 'AKSHAY KUMAR', 'jobs.html, jobs.css, group leader , help create/manage the database including the jobs table', '\"Looking for my next meal\"'),
-(106729026, 'NIK MOHAMED AIMAN', 'about.html, about.css, created the contributions table , about.php', '\"Hidup Melayu\"'),
-(106729136, 'MUHAMAD DANIAL', 'apply.html, apply.css, created manage.php and manager queries ', '\"Aku suka kura-kura\" ~ (I love turtles, in Malay)'),
-(106947909, 'PAVETERAN ELANGOVAN', 'Index.html, index.css, converted navivation and footer into include file while creating settings.php', '\"I wish I could have 5 cats\"');
+INSERT INTO `about` (`Student_ID`, `Name`, `Contributions_Field`, `Quote`, `photo_url`) VALUES
+(106218184, 'RYAN STOTHARD', 'created about.html, about.css, PHP validate eoi process ', '\"I give em an inch, and they take a mile!\"', 'images/Ryan.jpeg'),
+(106728654, 'AKSHAY KUMAR', 'jobs.html, jobs.css, group leader , help create/manage database and change jobs.html to jobs.php', '\"Looking for my next meal\"', 'images/akshay.jpeg'),
+(106729026, 'NIK MOHAMED AIMAN', 'about.html, about.css, created the contributions table , about.php', '\"Hidup Melayu\"', 'images/NikAiman.jpeg'),
+(106729136, 'MUHAMAD DANIAL', 'apply.html, apply.css, created manage.php and manager queries ', '\"Aku suka kura-kura\" ~ (I love turtles, in Malay)', 'images/Danial.jpeg'),
+(106947909, 'PAVETERAN ELANGOVAN', 'Index.html, index.css, converted navivation and footer into include file while creating settings.php', '\"I wish I could have 5 cats\"', 'images/Pave.jpeg');
 
 -- --------------------------------------------------------
 
@@ -77,14 +78,10 @@ CREATE TABLE `eoi` (
 --
 
 INSERT INTO `eoi` (`EOInumber`, `Ref_ID`, `First_Name`, `Last_Name`, `Date_of_Birth`, `Gender`, `Street_Address`, `Suburb`, `State`, `Postcode`, `Email`, `Phone_Number`, `Desired_Role`, `Skills`, `Other_Skills`, `Uploaded_File`, `Status`, `Submitted_At`) VALUES
-(1, 'JN023', 'John', 'Smith', '2000-05-14', 'Male', '12 King Street', 'Melbourne', 'VIC', '3000', 'john@example.com', '0412345678', 'Software Engineer', 'PHP, HTML, CSS', 'Good communication skills', NULL, 'New', '2026-11-15 02:51:21'),
-(2, 'JN023', 'Sarah', 'Johnson', '1999-08-22', 'Female', '25 Queen Street', 'Sydney', 'NSW', '2000', 'sarah@example.com', '0412345679', 'Software Engineer', 'Java, Python, SQL', 'Teamwork and leadership', NULL, 'Current', '2026-11-15 02:51:21'),
-(3, 'JN024', 'Michael', 'Brown', '2001-03-10', 'Male', '8 Park Road', 'Brisbane', 'QLD', '4000', 'michael@example.com', '0412345680', 'Web Developer', 'HTML, CSS, JavaScript', 'Responsive web design', NULL, 'New', '2026-11-15 02:51:21'),
-(4, 'JN025', 'Emily', 'Davis', '1998-11-05', 'Female', '16 George Street', 'Perth', 'WA', '6000', 'emily@example.com', '0412345681', 'Data Analyst', 'SQL, Excel, Python', 'Data visualisation', NULL, 'Final', '2026-11-15 02:51:21');
-
---
--- Indexes for dumped tables
---
+(1, 'JN023', 'John', 'Smith', '2000-05-14', 'Male', '12 King Street', 'Melbourne', 'VIC', '3000', 'john@example.com', '0412345678', 'Software Engineer', 'PHP, HTML, CSS', 'Good communication skills', NULL, 'New', '2026-11-14 18:51:21'),
+(2, 'JN023', 'Sarah', 'Johnson', '1999-08-22', 'Female', '25 Queen Street', 'Sydney', 'NSW', '2000', 'sarah@example.com', '0412345679', 'Software Engineer', 'Java, Python, SQL', 'Teamwork and leadership', NULL, 'Current', '2026-11-14 18:51:21'),
+(3, 'JN024', 'Michael', 'Brown', '2001-03-10', 'Male', '8 Park Road', 'Brisbane', 'QLD', '4000', 'michael@example.com', '0412345680', 'Web Developer', 'HTML, CSS, JavaScript', 'Responsive web design', NULL, 'New', '2026-11-14 18:51:21'),
+(4, 'JN025', 'Emily', 'Davis', '1998-11-05', 'Female', '16 George Street', 'Perth', 'WA', '6000', 'emily@example.com', '0412345681', 'Data Analyst', 'SQL, Excel, Python', 'Data visualisation', NULL, 'Final', '2026-11-14 18:51:21');
 
 -- --------------------------------------------------------
 
@@ -163,7 +160,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `eoi`
 --
 ALTER TABLE `eoi`
-  MODIFY `EOInumber` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `EOInumber` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
