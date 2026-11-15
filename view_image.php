@@ -16,7 +16,8 @@ try {
     $stmt->execute([$ref]);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    //See Image using this http://localhost/Applied-Web-Project-Part2/view_image.php?ref=JN023
+    //Update using http://localhost/Applied-Web-Project-Part2/update_images.php 
+    //See images using http://localhost/Applied-Web-Project-Part2/view_image.php?ref=JN023
 
     // 3. Verify image data exists
     if ($row && !empty($row['reporting_line'])) {
