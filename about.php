@@ -95,51 +95,39 @@
                     <section class="sub_section_block_ab">
                         <div class="sub_topic_ab"><h2>Member Contributions and Quotes</h2></div>
                         <div class="people_ab">
-                                <dl>
-                                    <div class="ryan_ab">
-                                        <dt>Ryan Stothard</dt>
-                                    </div>
-                                    <div class="ryan_text_ab">
-                                        <dd><i>Contributions:about.html, about.css, JIRA</i></dd>
-                                        <dd><i>Quote:"I give em an inch, and they take a mile!"</i></dd>
-                                    </div>
-                                </dl>
-                            <dl>
-                                <div class="akshay_ab">
-                                    <dt>Akshay Kumar</dt>
-                                </div>
-                                <div class="akshay_text_ab">
-                                    <dt>Contributions:jobs.html, jobs.css, Group Leader</dt>
-                                    <dd><i>Quote"Looking for my next meal"</i></dd>
-                                </div>
-                            </dl>
-                            <dl>
-                                <div class="danial_ab">
-                                    <dt>Muhamad Danial</dt>
-                                </div>
-                                <div class="danial_text_ab">
-                                    <dt>Contributions:apply.html, apply.css</dt>
-                                    <dd><i>Quote"Aku suka kura-kura" ~ (I love turtles, in Malay)</i></dd>
-                                </div>
-                            </dl>
-                            <dl>
-                                <div class="nik_ab">
-                                    <dt>Nik Aiman</dt>
-                                </div>
-                                <div class="nik_text_ab">
-                                    <dt>Contributions:services.html, services.css, Head Website Designer for CSS</dt>
-                                    <dd><i>Quote:"Hidup Melayu" ~ (live for the malays)</i></dd>
-                                </div>
-                            </dl>
-                            <dl>
-                                <div class="pave_ab">
-                                    <dt>Paveteran Elangovan</dt>
-                                </div>
-                                <div class="pave_text_ab">
-                                    <dt> Contributions:index.html, index.css, Github</dt>
-                                    <dd><i>Quote:"I wish I could have 5 cats"</i></dd>
-                                </div>
-                            </dl>
+                        <?php
+                            require_once('settings.php') ;
+
+                            $conn = @mysqli_connect($host,$user,$pwd,$dbname);
+
+                            $sql ="SELECT Student_ID, Name , Contributions_Field, Quote
+                                  FROM about
+                                  ORDER BY Student_ID";
+                            $result = mysqli_query($conn, $sql);
+                            
+                            $current = "";
+                            if ($result) {
+                                while ($row = mysqli_fetch_array($result)) {
+
+                                if ($row["Student_ID"] != $current  ) {
+                                    if ( $current != "") {
+                                        echo "</div></dl>";
+                                    }
+                                    $current = $row["Student_ID"];
+
+                                    echo "<dl class ='member_ab'> ";
+                                    echo "<div class ='member_name_ab'><dt>" . htmlspecialchars($row["Name"]) ."</dt></div>";
+                                    echo "<div class ='member_text_ab'>";
+                                    echo "<dd><i>Quote: " . htmlspecialchars($row["Quote"]) ."";
+                                }
+
+                                echo "<dd><i>Contributions: ". htmlspecialchars($row["Contributions_Field"]) ."</i></dd>";
+                                }        
+                                if ($current !="") {
+                                    echo "</div></dl>";
+                                }
+                                }
+                        ?>
                         </div>  
                     </section>
 
