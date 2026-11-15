@@ -97,38 +97,36 @@
                         <div class="sub_topic_ab"><h2>Member Contributions and Quotes</h2></div>
                         <div class="people_ab">
                         <?php
-                            require_once('settings.php') ;
+                    
+                            require_once('settings.php');
 
-                            $conn = @mysqli_connect($host,$user,$pwd,$dbname);
+                            $conn = @mysqli_connect($host, $user, $pwd, $dbname);
 
-                            $sql ="SELECT Student_ID, Name , Contributions_Field, Quote
-                                  FROM about
-                                  ORDER BY Student_ID";
+                            $sql = "SELECT Student_ID, Name, Contributions_Field, Quote, photo_url
+                                    FROM about
+                                    ORDER BY Student_ID";
                             $result = mysqli_query($conn, $sql);
-                            
-                            $current = "";
+
                             if ($result) {
-                                while ($row = mysqli_fetch_array($result)) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo "<dl class='member_ab'>";
+                                    echo "<div class='member_name_ab'><dt>" . htmlspecialchars($row['Name']) . "</dt></div>";
+                                    echo "<div class='member_text_ab'>";
+                                    echo "<dd><i>Quote: " . htmlspecialchars($row['Quote']) . "</i></dd>";
+                                    echo "<dd><i>Contributions: " . htmlspecialchars($row['Contributions_Field']) . "</i></dd>";
+                                    echo "</div>";
 
-                                if ($row["Student_ID"] != $current  ) {
-                                    if ( $current != "") {
-                                        echo "</div></dl>";
+                                    if (!empty($row['photo_url'])) {
+                                        echo "<div class='member_photo_ab'>";
+                                        echo "<img src='" . htmlspecialchars($row['photo_url']) . "' alt='" . "' style='width:400px; height:600px; object-fit:cover;'>";
+                                        echo "</div>";
                                     }
-                                    $current = $row["Student_ID"];
 
-                                    echo "<dl class ='member_ab'> ";
-                                    echo "<div class ='member_name_ab'><dt>" . htmlspecialchars($row["Name"]) ."</dt></div>";
-                                    echo "<div class ='member_text_ab'>";
-                                    echo "<dd><i>Quote: " . htmlspecialchars($row["Quote"]) ."";
+                                    echo "</dl>";
                                 }
-
-                                echo "<dd><i>Contributions: ". htmlspecialchars($row["Contributions_Field"]) ."</i></dd>";
-                                }        
-                                if ($current !="") {
-                                    echo "</div></dl>";
-                                }
-                                }
+                            }
                         ?>
+                    
                         </div>  
                     </section>
 
