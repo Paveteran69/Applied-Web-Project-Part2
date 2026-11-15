@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2026 at 04:17 PM
+-- Generation Time: Nov 15, 2026 at 02:40 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,26 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contributions`
+-- Table structure for table `about`
 --
 
-CREATE TABLE `contributions` (
+CREATE TABLE `about` (
   `Student_ID` int(9) NOT NULL,
   `Name` varchar(50) NOT NULL,
   `Contributions_Field` varchar(100) NOT NULL,
-  `Description` text NOT NULL
+  `Quote` tinytext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `contributions`
+-- Dumping data for table `about`
 --
 
-INSERT INTO `contributions` (`Student_ID`, `Name`, `Contributions_Field`, `Description`) VALUES
-(106218184, 'RYAN STOTHARD', 'HTML, CSS, PHP', '- FOR NOW\r\n'),
-(106728654, 'Akshay Kumar', 'HTML, CSS, SQL', 'Created the Jobs page, help create the navigation bar,decorated Jobs page using CSS and help create/manage the database'),
-(106729026, 'NIK MOHAMED AIMAN', 'HTML, CSS, SQL , PHP', 'Helped with some parts of the HTML code in About.HTML , decorated the page using CSS and help create and manage the database'),
-(106729136, 'MUHAMAD DANIAL', 'HTML, CSS, PHP', 'Used HTML to create and CSS to decorate the apply page, and created manage.php'),
-(106947909, 'PAVETERAN ELANGOVAN', 'HTML, CSS, PHP,', '- FOR NOW\r\n');
+INSERT INTO `about` (`Student_ID`, `Name`, `Contributions_Field`, `Quote`) VALUES
+(106218184, 'RYAN STOTHARD', 'about.html, about.css, PHP validate records', '\"I give em an inch, and they take a mile!\"'),
+(106728654, 'AKSHAY KUMAR', 'jobs.html, jobs.css, group leader , help create/manage the database including the jobs table', '\"Looking for my next meal\"'),
+(106729026, 'NIK MOHAMED AIMAN', 'about.html, about.css, created the contributions table , about.php', '\"Hidup Melayu\"'),
+(106729136, 'MUHAMAD DANIAL', 'apply.html, apply.css, created manage.php and manager queries ', '\"Aku suka kura-kura\" ~ (I love turtles, in Malay)'),
+(106947909, 'PAVETERAN ELANGOVAN', 'Index.html, index.css, converted navivation and footer into include file while creating settings.php', '\"I wish I could have 5 cats\"');
 
 -- --------------------------------------------------------
 
@@ -89,16 +89,16 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`) VALUES
-(1, 'admin', '$2y$10$.iTBhUDx71O1.TJ3keJ6x.2kbPw3pTDpc4rwuYRmuiefPKtAGxFJC');
+(1, 'admin', '$2y$10$4op/V7MYZyhrZXOUgdzmReAWnf9NTHfz7ZjTA2uQZJGAz2n8fKaa6');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `contributions`
+-- Indexes for table `about`
 --
-ALTER TABLE `contributions`
+ALTER TABLE `about`
   ADD PRIMARY KEY (`Student_ID`);
 
 --
