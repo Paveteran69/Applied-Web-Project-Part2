@@ -72,6 +72,20 @@ CREATE TABLE `eoi` (
   `Submitted_At` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `eoi`
+--
+
+INSERT INTO `eoi` (`EOInumber`, `Ref_ID`, `First_Name`, `Last_Name`, `Date_of_Birth`, `Gender`, `Street_Address`, `Suburb`, `State`, `Postcode`, `Email`, `Phone_Number`, `Desired_Role`, `Skills`, `Other_Skills`, `Uploaded_File`, `Status`, `Submitted_At`) VALUES
+(1, 'JN023', 'John', 'Smith', '2000-05-14', 'Male', '12 King Street', 'Melbourne', 'VIC', '3000', 'john@example.com', '0412345678', 'Software Engineer', 'PHP, HTML, CSS', 'Good communication skills', NULL, 'New', '2026-11-15 02:51:21'),
+(2, 'JN023', 'Sarah', 'Johnson', '1999-08-22', 'Female', '25 Queen Street', 'Sydney', 'NSW', '2000', 'sarah@example.com', '0412345679', 'Software Engineer', 'Java, Python, SQL', 'Teamwork and leadership', NULL, 'Current', '2026-11-15 02:51:21'),
+(3, 'JN024', 'Michael', 'Brown', '2001-03-10', 'Male', '8 Park Road', 'Brisbane', 'QLD', '4000', 'michael@example.com', '0412345680', 'Web Developer', 'HTML, CSS, JavaScript', 'Responsive web design', NULL, 'New', '2026-11-15 02:51:21'),
+(4, 'JN025', 'Emily', 'Davis', '1998-11-05', 'Female', '16 George Street', 'Perth', 'WA', '6000', 'emily@example.com', '0412345681', 'Data Analyst', 'SQL, Excel, Python', 'Data visualisation', NULL, 'Final', '2026-11-15 02:51:21');
+
+--
+-- Indexes for dumped tables
+--
+
 -- --------------------------------------------------------
 
 --
