@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2026 at 02:40 AM
+-- Generation Time: Nov 15, 2026 at 03:25 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -44,6 +44,33 @@ INSERT INTO `about` (`Student_ID`, `Name`, `Contributions_Field`, `Quote`) VALUE
 (106729026, 'NIK MOHAMED AIMAN', 'about.html, about.css, created the contributions table , about.php', '\"Hidup Melayu\"'),
 (106729136, 'MUHAMAD DANIAL', 'apply.html, apply.css, created manage.php and manager queries ', '\"Aku suka kura-kura\" ~ (I love turtles, in Malay)'),
 (106947909, 'PAVETERAN ELANGOVAN', 'Index.html, index.css, converted navivation and footer into include file while creating settings.php', '\"I wish I could have 5 cats\"');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `eoi`
+--
+
+CREATE TABLE `eoi` (
+  `EOInumber` int(10) UNSIGNED NOT NULL,
+  `Ref_ID` varchar(5) NOT NULL,
+  `First_Name` varchar(20) NOT NULL,
+  `Last_Name` varchar(20) NOT NULL,
+  `Date_of_Birth` date NOT NULL,
+  `Gender` varchar(10) NOT NULL,
+  `Street_Address` varchar(100) NOT NULL,
+  `Suburb` varchar(100) NOT NULL,
+  `State` varchar(3) NOT NULL,
+  `Postcode` char(4) NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `Phone_Number` varchar(12) NOT NULL,
+  `Desired_Role` varchar(50) NOT NULL,
+  `Skills` varchar(255) NOT NULL,
+  `Other_Skills` text NOT NULL,
+  `Uploaded_File` varchar(255) DEFAULT NULL,
+  `Status` enum('New','Current','Final','') NOT NULL DEFAULT 'New',
+  `Submitted_At` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -102,6 +129,12 @@ ALTER TABLE `about`
   ADD PRIMARY KEY (`Student_ID`);
 
 --
+-- Indexes for table `eoi`
+--
+ALTER TABLE `eoi`
+  ADD PRIMARY KEY (`EOInumber`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -111,6 +144,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `eoi`
+--
+ALTER TABLE `eoi`
+  MODIFY `EOInumber` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
