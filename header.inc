@@ -6,7 +6,9 @@
     <?php include 'navigation.inc'; ?>
 
     <div class="searchbar">
-        <input type="text" placeholder="Search...">
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <form action="search.php" method="get">
+            <input type="text" name="q" placeholder="Search...">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
     </div>
 </header>
